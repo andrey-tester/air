@@ -11,13 +11,16 @@ import java.util.*;
 // 4-Jan-2019
 
 public class Airport {
+    // TODO: Could declare just List<Plane> planes;
     private List<? extends Plane> planes;
 
     public List<PassengerPlane> getPassengerPlanes() {
+        // TODO: What is the reason of declaring another variable.
         List<? extends Plane> planes = this.planes;
         List<PassengerPlane> passengerPlanes = new ArrayList<>();
         for (Plane plane : planes) {
             if (plane instanceof PassengerPlane) {
+                //  TODO: currently can't be compiled.
                 planesArrayList.add((PassengerPlane) plane);
             }
         }
@@ -37,6 +40,7 @@ public class Airport {
     public PassengerPlane getPassengerPlaneWithMaxPassengersCapacity() {
         List<PassengerPlane> passengerPlanes = getPassengerPlanes();
         PassengerPlane planeWithMaxCapacity = passengerPlanes.get(0);
+        // TODO: foreach could be more convinient here.
         for (int i = 0; i < passengerPlanes.size(); i++) {
             if (passengerPlanes.get(i).getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
                 planeWithMaxCapacity = passengerPlanes.get(i);
@@ -48,6 +52,7 @@ public class Airport {
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
         List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
+        //TODO:  for each could be more convinient.
         for (int i = 0; i < militaryPlanes.size(); i++) {
             MilitaryPlane plane = militaryPlanes.get(i);
             if (plane.getType() == MilitaryType.TRANSPORT) {
@@ -58,6 +63,7 @@ public class Airport {
     }
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
+        // TODO: it is code duplication the only diffence is MilitaryType.BOMBER could create common method.
         List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
         for (int i = 0; i < militaryPlanes.size(); i++) {
@@ -123,6 +129,7 @@ public class Airport {
         return "Airport{" + "Planes=" + planes.toString() + "}";
     }
 
+    // TODO: Normally constructor put in the beginning of the class.
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;
     }

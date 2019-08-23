@@ -3,6 +3,7 @@ package Planes;
 import java.util.Objects;
 
 abstract public class Plane {
+    // TODO: Do we need this field with no modifiers. Think private is better in this case.
     String model;
     private int maxSpeed;
     private int maxFlightDistance;
