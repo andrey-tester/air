@@ -1,8 +1,9 @@
+// TODO: packages are usually called with lower case.
 package Planes;
 
 import models.ClassificationLevel;
 import models.ExperimentalTypes;
-
+// TODO: Classess usually called from Capital latter.
 public class experimentalPlane extends Plane{
 
     private ExperimentalTypes type;

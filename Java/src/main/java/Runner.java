@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Runner {
+    // TODO: will not be used outside. Could be private.
     static List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
@@ -28,6 +29,7 @@ public class Runner {
         Airport airport = new Airport(planes);
         Airport militaryAirport = new Airport(airport.getMilitaryPlanes());
         Airport passengerAirport = new Airport(airport.getPassengerPlanes());
+        // TODO: System.out.println will call toString() no need to explicitly call it (militaryAirport.sortByMaxDistance())
         System.out.println("Military airport sorted by max distance: " + militaryAirport.sortByMaxDistance().toString());
         System.out.println("Passenger airport sorted by max speed: " + passengerAirport.sortByMaxSpeed().toString());
         System.out.println("Plane with max passenger capacity: " + passengerAirport.getPassengerPlaneWithMaxPassengersCapacity());
